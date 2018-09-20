@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      redirect: 'FormBuilder',
+      redirect: '/page/FormBuilder',
     },
     {
       path: '/page/FormBuilder',
