@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:docs": "NODE_ENV=docs vue-cli-service build",
     "dist": "vue-cli-service build --target lib --name BootstrapVueToolkit src/install.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
