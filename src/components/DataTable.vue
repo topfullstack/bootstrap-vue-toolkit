@@ -7,6 +7,14 @@
         :name="field.key || name" :model="row.item" :value="row.value">
         </b-data-value>
       </template>
+      <template slot="_actions" slot-scope="row">
+        <b-button size="sm" @click.stop="edit(row.item)" class="mr-1" v-if="noEdit !== true">
+          <i class="fa fa-edit"></i> Edit
+        </b-button>
+        <b-button size="sm" @click.stop="remove(row.item)" v-if="noRemove !== true">
+          <i class="fa fa-trash"></i> Delete
+        </b-button>
+      </template>
     </b-table>
 
     <b-row class="align-items-center">
@@ -32,12 +40,22 @@ export default {
     page: Number,
     total: Number,
     totalRows: Number,
-    perPage: Number
+    perPage: Number,
+    noEdit: Boolean,
+    noRemove: Boolean,
   },
   data() {
     return {};
   },
-  computed: {}
+  computed: {},
+  methods: {
+    edit(row){
+      this.$emit('edit', row)
+    },
+    remove(row){
+      this.$emit('remove', row)
+    },
+  }
 };
 </script>
 

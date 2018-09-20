@@ -1,8 +1,9 @@
 <template>
   <div>
-    <b-data-table
+    <b-data-table 
+    
     :items="items" :fields="fields" :total="total" :per-page="perPage"
-    :page.sync="page">
+    :page.sync="page" @edit="edit" @remove="remove">
 
       <div slot="summary" slot-scope="data">
         总计: {{data.total}}条数据
@@ -31,7 +32,8 @@ export default {
         public: {
           type: "switch"
         },
-        created_at: { type: "datetime", format: "MM-DD HH:mm" }
+        created_at: { type: "datetime", format: "MM-DD HH:mm" },
+        _actions: {},
       },
       items: [],
       total: 0,
@@ -48,6 +50,12 @@ export default {
   methods: {
     login(data) {
       console.log(data);
+    },
+    edit(row){
+      console.log('edit', row)
+    },
+    remove(row){
+      console.log('remove', row)
     }
   },
   mounted() {
