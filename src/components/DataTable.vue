@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-table v-bind="attrs" class="data-table":items="items" :fields="fields">
+    <b-table v-bind="attrs" class="data-table" :items="items" :fields="fields">
       <template :slot="field.key || name" slot-scope="row"
       v-for="(field, name) in fields">
         <b-data-value :key="'data-value-' + name" :field="fields[name]"
