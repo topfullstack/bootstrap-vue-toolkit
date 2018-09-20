@@ -1,0 +1,16 @@
+$mr: 0.5rem;
+
+form > button {
+  margin-right: $mr;
+}
+form.form-inline > * {
+  margin-right: $mr;
+}
+
+.data-value{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 20em;
+}
