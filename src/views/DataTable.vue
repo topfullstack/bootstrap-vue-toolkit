@@ -3,10 +3,6 @@
     <b-data-table :attrs="attrs" 
     :items="items" :fields="fields" :total="total" :per-page="perPage"
     :page.sync="page" @edit="edit" @remove="remove">
-
-      <div slot="summary" slot-scope="data">
-        总计: {{data.total}}条数据
-      </div>
     </b-data-table>
     
   </div>

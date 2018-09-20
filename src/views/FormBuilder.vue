@@ -2,7 +2,7 @@
   <div>
     <b-row>
       <b-col>
-        <BFormBuilder :fields="fields" v-model="model"></BFormBuilder>
+        <b-form-builder :fields="fields" v-model="model"></b-form-builder>
       </b-col>
     </b-row>
   </div>

@@ -11,16 +11,16 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      redirect: 'form-builder',
+      redirect: 'FormBuilder',
     },
     {
-      path: '/form-builder',
-      name: 'form-builder',
+      path: '/page/FormBuilder',
+      name: 'FormBuilder',
       component: FormBuilder
     },
     {
-      path: '/data-table',
-      name: 'data-table',
+      path: '/page/DataTable',
+      name: 'DataTable',
       component: DataTable
     },
   ]
