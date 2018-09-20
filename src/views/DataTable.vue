@@ -1,7 +1,6 @@
 <template>
   <div>
-    <b-data-table 
-    
+    <b-data-table :attrs="attrs" 
     :items="items" :fields="fields" :total="total" :per-page="perPage"
     :page.sync="page" @edit="edit" @remove="remove">
 
@@ -20,20 +19,33 @@ export default {
   data() {
     return {
       rawItems: items,
+      attrs: {
+        // bordered: true,
+        hover: true,
+      },
       fields: {
-        id: {},
-        actor_name: { key: "actor.display_login", label: "Actor Name" },
-        "actor.avatar_url": { type: "image", attrs: { height: "50" } },
+        // id: {},
+        actor_name: {
+          key: "actor.display_login",
+          label: "Actor Name",
+          attrs: { style: "max-width: 5em" }
+        },
+        "actor.avatar_url": {
+          label: "Avatar",
+          type: "image",
+          attrs: { height: "50" }
+        },
         repo: {
           key: "repo.name",
           type: "link",
-          href: "https://github.com/{value}"
+          href: "https://github.com/{value}",
+          attrs: { style: "max-width: 10em" }
         },
         public: {
           type: "switch"
         },
         created_at: { type: "datetime", format: "MM-DD HH:mm" },
-        _actions: {},
+        _actions: {}
       },
       items: [],
       total: 0,
@@ -51,11 +63,16 @@ export default {
     login(data) {
       console.log(data);
     },
-    edit(row){
-      console.log('edit', row)
+    edit(row) {
+      this.$router.push('form-builder')
+      console.log("edit", row);
     },
-    remove(row){
-      console.log('remove', row)
+    remove(row) {
+      if (confirm('Are you sure to delete this record?')) {
+        const i = this.items.findIndex(v => v.id === row.id)
+        this.items.splice(i, 1)
+      }
+      console.log("remove", row);
     }
   },
   mounted() {

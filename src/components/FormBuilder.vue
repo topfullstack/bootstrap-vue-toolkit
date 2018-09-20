@@ -1,10 +1,14 @@
 <template>
   <b-form v-bind="$props" @submit.prevent="$emit('submit', value)">
     <template v-if="!inline">
-      <b-form-group v-for="(field, name) in fields" :key="name" v-bind="field"
-      :label="field.label || util.titlize(name)">
-        <BFormField :name="name" :field="field" v-model="model[name]" />
-      </b-form-group>
+      <b-row>
+        <b-col v-for="(field, name) in fields" :key="name" :lg="field.lg || field.cols || 12">
+          <b-form-group  v-bind="field"
+          :label="field.label || util.titlize(name)">
+            <BFormField :name="name" :field="field" v-model="model[name]" />
+          </b-form-group>
+        </b-col>
+      </b-row>
     </template>
     <template v-else>
       <template v-for="(field, name) in fields" v-bind="field">

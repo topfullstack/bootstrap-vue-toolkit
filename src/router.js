@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+
 import FormBuilder from './views/FormBuilder.vue'
 import DataTable from './views/DataTable.vue'
 
@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      redirect: 'form-builder',
     },
     {
       path: '/form-builder',
