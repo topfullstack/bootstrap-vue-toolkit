@@ -5,7 +5,7 @@
         <b-col v-for="(field, name) in fields" :key="name" :lg="field.lg || field.cols || 12">
           <b-form-group  v-bind="field"
           :label="field.label || util.titlize(name)">
-            <BFormField :name="name" :field="field" v-model="model[name]" />
+            <b-form-field :name="name" :field="field" v-model="model[name]" />
           </b-form-group>
         </b-col>
       </b-row>

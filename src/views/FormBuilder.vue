@@ -12,7 +12,6 @@
 export default {
   data() {
     return {
-      
       fields: {
         title: { label: "Blog Title", cols: 12 },
 
@@ -26,10 +25,17 @@ export default {
             { text: "Node.js", value: 3 }
           ]
         },
-        
+
         cover: { type: "file", cols: 6 },
         description: { type: "textarea", rows: 3, placeholder: "Some text..." },
-        body: { type: "html" }
+        body: {
+          type: "html",
+          // options: {
+          //   modules: {
+          //     toolbar: [["bold", { header: [1, 2, 3] }]]
+          //   }
+          // }
+        }
       },
       model: {
         title: "Give me an awesome title",
@@ -41,8 +47,6 @@ export default {
       }
     };
   },
-  methods: {
-
-  }
+  methods: {}
 };
 </script>

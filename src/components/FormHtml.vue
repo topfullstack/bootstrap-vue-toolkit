@@ -1,19 +1,27 @@
 <template>
-  <HtmlEditor :content="value" @change="$emit('input', arguments[0])" />
+  <html-editor :value="value" @input="$emit('input', arguments[0])" :options="options" />
 </template>
 
 <script>
-import 'font-awesome/css/font-awesome.css'
-import VueHtml5Editor from 'vue-html5-editor'
-const HtmlEditor = new VueHtml5Editor({
+import "quill/dist/quill.core.css";
+import "quill/dist/quill.snow.css";
+// import "quill/dist/quill.bubble.css";
+import { quillEditor } from "vue-quill-editor";
 
-})
 export default {
   components: {
-    HtmlEditor
+    HtmlEditor: quillEditor
   },
   props: {
     value: String,
-  },
-}
+    options: {
+      type: Object,
+      default(){
+        return {
+          
+        }
+      }
+    }
+  }
+};
 </script>

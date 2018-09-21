@@ -60,7 +60,7 @@ export default {
       console.log(data);
     },
     edit(row) {
-      this.$router.push('form-builder')
+      this.$router.push('/page/FormBuilder')
       console.log("edit", row);
     },
     remove(row) {
