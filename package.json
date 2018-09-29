@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build:docs": "NODE_ENV=docs vue-cli-service build",
-    "dist": "vue-cli-service build --target lib --name BootstrapVueToolkit src/install.js",
+    "build": "vue-cli-service build --report",
+    "build:docs": "NODE_ENV=docs vue-cli-service build --report",
+    "dist": "vue-cli-service build --target lib --name BootstrapVueToolkit src/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
